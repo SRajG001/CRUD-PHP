@@ -44,5 +44,16 @@ class DB_conn {
         }
     }
 
+    public function updateData($task,$id)
+    {    
+        $sql = "UPDATE tasks SET task='$task' WHERE id='$id'";
+        $result = $this->conn->query($sql);
+        if($result === TRUE){
+            return $result;
+        }else{ 
+            return $this->conn->error; 
+        }
+    }
+
 }
 ?>
